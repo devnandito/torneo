@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="{{STATIC_URL}}css/styles.css" />
+	<script src="{{STATIC_URL}}js/jquery.js"></script>
+	<script src="{{STATIC_URL}}js/prefixfree.min.js"></script>
+	<script src="{{STATIC_URL}}js/functions.js"></script>
+	<title>.::TORNEO SSEE::.</title>
+</head>
+<body>
+	<header>
+		<hgroup>
+			{% block title %}{% endblock %}
+		<hgroup>
+		<nav>
+			<ul>
+				<li><a href="/equipos">Home</a></li>
+				<li><a href="/jugador">Cargar Goles</a></li>
+				<li><a href="/planilla">Planilla de juego</a></li>
+				<li><a href="/tarjeta">Cargar Tajetas</a></li>
+				<li><a href="/cerrar">Logout {{ usuario.username }}</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<article id="info">
+			<figure>
+				<img id="foto" src="{{STATIC_URL}}img/foto1.jpg" />
+				<img id="foto" src="{{STATIC_URL}}img/foto2.jpg" />
+				<img id="foto" src="{{STATIC_URL}}img/foto3.jpg" />
+			</figure>
+		</article>
+		<article id="contenido">
+			{% block contenido %}{% endblock %}
+		</article>
+	</section>
+</body>
+</html>

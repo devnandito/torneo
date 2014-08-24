@@ -1,0 +1,11 @@
+{% load principal_extras %}
+<table>
+	<tr>
+		<td>{% if is_paginated %} {% render_paginator 2 3 %} {% endif %}</td>
+	</tr>
+	{% for item in page_obj %}
+	<tr>
+		<td>{{ item.desjugador }}</td>
+	</tr>
+	{% endfor %}
+</table>

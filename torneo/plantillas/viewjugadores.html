@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+	{% for title in torneos %}
+		<h1>{{ title.nametorneo|upper }}</h1>
+		<h2>{{ title.destorneo|upper }}</h2>
+	{% endfor %}
+{% endblock %}
+{% block contenido %}
+	<table>
+		<tr>
+			<th><a onClick="popup('/goleadores');return false;" href=""><img src="{{STATIC_URL}}img/page.png" /></a> JUGADORES</th>
+			<th>GOLES</th>
+		</tr>
+		{% for item in jugadores %}
+		<tr style="background:{% cycle '#DCDCF0' '#FFFFF0' %} ">
+			<td>{{ item.desjugador }}</td>
+			<td>{{ item.goles }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

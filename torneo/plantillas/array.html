@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block contenido %}
+	<table>
+		<tr>
+			<th>LOCAL</th>
+		</tr>
+		{% for item in lista1 %}
+			<tr style="background:{% cycle '#DCDCF0' '#FFFFF0' %} ">
+				<td>{{ item }}</td>
+			</tr>
+		{% endfor %}
+		{% for item in lista2 %}
+			<tr style="background:{% cycle '#DCDCF0' '#FFFFF0' %} ">
+				<td>{{ item.fklocal }}</td>
+			</tr>
+		{% endfor %}
+{% endblock %}

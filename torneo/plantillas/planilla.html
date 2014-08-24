@@ -1,0 +1,26 @@
+{% extends 'base1.html' %}
+{# load principal_extras #}
+{% block title %}
+	{% for title in torneos %}
+		<h1>{{ title.nametorneo|upper }}</h1>
+		<h2>{{ title.destorneo|upper }}</h2>
+	{% endfor %}
+{% endblock %}
+{% block contenido %}
+	<table>
+		{% regroup juegos by fkfecha as fecha_list %}
+		{% for fecha in fecha_list %}
+			<tr>
+				<th colspan="4">{{ fecha.grouper }}</th>
+			</tr>
+			{% for item in fecha.list %}
+				<tr style="background:{% cycle '#DCDCF0' '#FFFFF0' %} ">
+					<td><a onClick="popup('{% url 'principal.views.printplanilla' item.id %}');return false;" href=""><img src="{{STATIC_URL}}img/page.png" /></a></td>
+					<!-- <td>{# {# item.fklocal.desequipo|cutstring:'A' #} #}</td> -->
+					<td>{{ item.fklocal.desequipo }}</td>
+					<td>VS</td>
+					<td>{{ item.fkvisita.desequipo }}</td>
+				</tr>
+			{% endfor %}
+		{% endfor %}
+{% endblock %}

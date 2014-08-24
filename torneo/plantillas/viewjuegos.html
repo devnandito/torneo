@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block contenido %}
+	<table>
+		<tr>
+			<th>Fecha</th>
+			<th>Local</th>
+			<th></th>
+			<th>Visita</th>
+			<th>Resultado</th>
+		</tr>
+		{% for item in juegos %}
+		<tr style="background:{% cycle '#DCDCF0' '#FFFFF0' %} ">
+			<td>{{ item.fkfecha }}</td>
+			<td>{{ item.fklocal }}</td>
+			<td> VS </td>
+			<td>{{ item.fkvisita }}</td>
+			<td>{{ item.fkres }}</td>
+			
+		</tr>
+		{% endfor %}
+		<tr>
+			<th colspan="5"><div class="pagination">
+				<span class="setep-links">
+					{% if juegos.has_previous %}
+						<a href="?page={{ juegos.previous_page_number }}"><img src="{{STATIC_URL}}img/back.png" /></a>
+					{% endif %}
+					<span class="current">
+						Pagina {{ juegos.number }} de {{ juegos.paginator.num_pages }}
+					</span>
+					{% if juegos.has_next %}
+						<a href="?page={{ juegos.next_page_number }}"><img src="{{STATIC_URL}}img/next.png" /></a>
+					{% endif %}
+				</span>
+			</div></th>
+		</tr>
+	</table>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base1.html' %}
+{% block title %}
+	{% for title in torneos %}
+		<h1>{{ title.nametorneo|upper }}</h1>
+		<h2>{{ title.destorneo|upper }}</h2>
+	{% endfor %}
+{% endblock %}
+{% block contenido %}
+	<form id='formulario' method='post' action=''>{% csrf_token %}
+		<table class="table1">
+			<tr>
+				<th colspan="2">{{ juegos.fkfecha }}</th>
+			</tr>
+			<tr>
+				<th>Goles {{ juegos.fklocal.desequipo }}:</th>
+				<td>{{ form.goleslocal }}</td>
+			</tr>
+			<tr>
+				<th>Goles {{ juegos.fkvisita.desequipo }}:</th>
+				<td>{{ form.golesvisita }}</td>
+			</tr>
+			<tr>
+				<th>Resultado:</th>
+				<td>{{ form.fkres }}</td>
+			</tr>
+			<tr>
+				<td><a href="/equipos" class="boton"/>Volver</td>
+				<td><input class="boton" type='submit' value='Actualizar' /></td>
+			</tr>
+		</table>
+	</form>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base1.html' %}
+{% block title %}
+	{% for title in torneos %}
+		<h1>{{ title.nametorneo|upper }}</h1>
+		<h2>{{ title.destorneo|upper }}</h2>
+	{% endfor %}
+{% endblock %}
+{% block contenido %}
+	<table>
+		<tr>
+			<th colspan="1">
+				{% for i in torneos %}
+					{% if i.estado == True %}
+						<a href="/tarjeta/add"><img src="{{STATIC_URL}}img/add.png" /></a>
+					{% endif %}
+				{% endfor %}
+			</th>
+			<th colspan="3">AMONESTADOS</th>
+		</tr>
+		<tr>
+			<th>JUGADORES</th>
+			<th>TARJETAS</th>
+			<th>FECHA</th>
+		</tr>
+		{% for item in tarjetas %}
+		<tr style="background:{% cycle '#DCDCF0' '#FFFFF0' %} ">
+			<td>{{ item.fkjugador }}</td>
+			<td>{{ item.fktarjeta }}</td>
+			<td>{{ item.fkjuego.fkfecha }}</td>
+		</tr>
+		{% endfor %}
+		<tr>
+			<th colspan="3"><div class="pagination">
+				<span class="setep-links">
+					{% if tarjetas.has_previous %}
+						<a href="?page={{ tarjetas.previous_page_number }}"><img src="{{STATIC_URL}}img/back.png" /></a>
+					{% endif %}
+					<span class="current">
+						Pagina {{ tarjetas.number }} de {{ tarjetas.paginator.num_pages }}
+					</span>
+					{% if tarjetas.has_next %}
+						<a href="?page={{ tarjetas.next_page_number }}"><img src="{{STATIC_URL}}img/next.png" /></a>
+					{% endif %}
+				</span>
+			</div></th>
+		</tr>
+	</table>
+{% endblock %}

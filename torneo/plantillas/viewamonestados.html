@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+	{% for title in torneos %}
+		<h1>{{ title.nametorneo|upper }}</h1>
+		<h2>{{ title.destorneo|upper }}</h2>
+	{% endfor %}
+{% endblock %}
+{% block contenido %}
+	<table>
+		<tr>
+			<th>JUGADORES</th>
+			<th>TARJETAS</th>
+			<th>FECHA</th>
+		</tr>
+		{% for item in tarjetas %}
+		<tr style="background:{% cycle '#DCDCF0' '#FFFFF0' %} ">
+			<td>{{ item.fkjugador }}</td>
+			<td>{{ item.fktarjeta }}</td>
+			<td>{{ item.fkjuego.fkfecha }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

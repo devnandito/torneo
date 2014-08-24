@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+	{% for title in torneos %}
+		<h1>{{ title.nametorneo|upper }}</h1>
+		<h2>{{ title.destorneo|upper }}</h2>
+	{% endfor %}
+{% endblock %}
+{% block contenido %}
+	<table>
+		{% regroup fixture by fkfecha as fecha_list %}
+		{% for fecha in fecha_list %}
+			<tr>
+				<th colspan="5">{{ fecha.grouper }}</th>
+			</tr>
+			{% for item in fecha.list %}
+				<tr style="background:{% cycle '#DCDCF0' '#FFFFF0' %} ">
+					<td>{{ item.fklocal.desequipo }}</td>
+					<td>{{ item.goleslocal }}</td>
+					<td>VS</td>
+					<td>{{ item.fkvisita.desequipo }}</td>
+					<td>{{ item.golesvisita }}</td>
+				</tr>
+			{% endfor %}
+		{% endfor %}
+	</table>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+	{% for title in torneos %}
+		<h1>{{ title.nametorneo|upper }}</h1>
+		<h2>{{ title.destorneo|upper }}</h2>
+	{% endfor %}
+{% endblock %}
+{% block contenido %}
+	<form id='formulario' method='post' action=''>{% csrf_token %}
+		<table class="table1">
+			<tr>
+				<td>Correo: </td>
+				<td>{{ formulario.correo}}</td>
+			</tr>
+			<tr>
+				<td>Mensaje: </td>
+				<td>{{ formulario.mensaje }}</td>
+			</tr>
+			<tr>
+				<td><a href="/" class="boton">Volver</a></td>
+				<td><input class="boton" type='submit' value='Enviar' /></td>
+			</tr>
+		</table>
+		<section class="foot">
+			Powered by Diego Saldivar - E-mail: fhersa@gmail.com
+		</section>
+	</form>
+{% endblock %}

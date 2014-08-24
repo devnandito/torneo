@@ -1,0 +1,11 @@
+{% extends 'ingresar.html' %}
+{% block contenido %}
+	{% if error %}
+		<div style="color:red"> El usuario o el password son incorrectos </div>
+	{% endif %}
+	<!--<script>
+		alert('El usuario o la contraseña no coinciden');
+		document.location.href='/ingresar';
+	</script>-->
+{% endblock %}
+

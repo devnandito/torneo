@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="{{STATIC_URL}}css/stylesprint.css" />
+	<script src="{{STATIC_URL}}js/jquery.js"></script>
+	<script src="{{STATIC_URL}}js/prefixfree.min.js"></script>
+	<script src="{{STATIC_URL}}js/functions.js"></script>
+	<title>.::TORNEO SSEE::.</title>
+</head>
+<body>
+{% load principal_extras %}
+<section>
+<article id="contenido">
+    <table class="planilla">
+        <tr>
+            <th colspan="6">{% for title in torneos %} {{ title.nametorneo|upper }} {% endfor %} </br> PLANILLA DE JUEGO </th>
+        </tr>
+        <tr>
+            <th colspan="6">{{planilla.fkfecha}}</th>
+        </tr>
+        <tr>
+            <th colspan="3">Equipo: {{planilla.fklocal.desequipo}}</th>
+            <td colspan="3">Capitan:</td>
+        </tr>
+        <tr>
+            <th>N°</th>
+            <th>Nombre</th>
+            <th>C.I.</th>
+            <th>Firma</th>
+            <th>Goles</th>
+            <th>Tarjetas</th>
+        </tr>
+        {% for jlocal in jugadorlocal %}
+            <tr>
+                <td></td>
+                <td>{{jlocal.desjugador}}</td>
+                <td>{{jlocal.cedula}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        {% endfor%}
+    	<tr>
+		   <td colspan="6">REPRESENTANTE: {% for jrl in rl %} {{ jrl.desjugador }} {% endfor %}</td>
+        </tr>
+        <tr>
+            <td colspan="6">SUB-REPRESENTANTE: {% for jsrl in srl %} {{ jsrl.desjugador }} {% endfor %} </td>
+        </tr>
+    </table>
+   	<section id="separador">
+   	</section>
+    <table class="planilla">
+        <tr>
+            <th colspan="6">{{planilla.fkfecha}}</th>
+        </tr>
+        <tr>
+            <th colspan="3">Equipo: {{planilla.fkvisita.desequipo}}</th>
+            <td colspan="3">Capitan:</td>
+        </tr>
+        <tr>
+            <th>N°</th>
+            <th>Nombre</th>
+            <th>C.I.</th>
+            <th>Firma</th>
+            <th>Goles</th>
+            <th>Tarjetas</th>
+        </tr>
+        {% for jvisita in jugadorvisita %}
+            <tr>
+                <td></td>
+                <td>{{jvisita.desjugador}}</td>
+                <td>{{jvisita.cedula}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        {% endfor%}
+        <tr>
+		   <td colspan="6">REPRESENTANTE: {% for jrv in rv %} {{ jrv.desjugador }} {% endfor %}</td>
+        </tr>
+        <tr>
+            <td colspan="6">SUB-REPRESENTANTE: {% for jsrv in srv %} {{ jsrv.desjugador }} {% endfor %} </td>
+        </tr>
+        <tr>
+        	<td colspan="6">RESUMEN <br/> DEL <br/> ENCUENTRO: </td>
+        </tr>
+    </table>
+</article>
+</section>
+</body>
+</html>

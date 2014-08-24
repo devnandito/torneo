@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="{{STATIC_URL}}css/stylesprint.css" />
+	<script src="{{STATIC_URL}}js/jquery.js"></script>
+	<script src="{{STATIC_URL}}js/prefixfree.min.js"></script>
+	<script src="{{STATIC_URL}}js/functions.js"></script>
+	<title>.::TORNEO SSEE::.</title>
+</head>
+<body>
+<section>
+<article id="contenido">
+    <table class="planilla">
+        <tr>
+            <th>JUGADORES</th>
+            <th>GOLES</th>
+        </tr>
+        {% for item in jugadores %}
+        <tr style="background:{% cycle '#DCDCF0' '#FFFFF0' %} ">
+            <td>{{ item.desjugador }}</td>
+            <td>{{ item.goles }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</article>
+</section>
+</body>
+</html>

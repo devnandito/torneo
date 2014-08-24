@@ -1,0 +1,30 @@
+{% extends 'base1.html'%}
+{% block title %}
+	{% for title in torneos %}
+		<h1>{{ title.nametorneo|upper }}</h1>
+		<h2>{{ title.destorneo|upper }}</h2>
+	{% endfor %}
+{% endblock %}
+{% block contenido %}
+<form id='formulario' method='post' action=''>{% csrf_token %}
+	{{ form.non_field_errors }}
+	<table class="table1">
+		<tr>
+			<th>Jugador:</th>
+			<th>{{ form.fkjugador }} <div class="error">{{ form.fkjugador.errors }}</div></th>
+		</tr>
+		<tr>
+			<th>Tarjeta:</th>
+			<td>{{ form.fktarjeta }} <div class="error">{{ form.fktarjeta.errors }}</div></td>
+		</tr>
+		<tr>
+			<th>Juego:</th>
+			<td>{{ form.fkjuego }} <div class="error">{{ form.fkjuego.errors }}</div></td>
+		</tr>
+		<tr>
+			<td><a href="/tarjeta" class="boton"/>Volver</td>
+			<td><input class="boton" type='submit' value='Actualizar' /></td>
+		</tr>
+	</table>
+</form>
+{% endblock %}

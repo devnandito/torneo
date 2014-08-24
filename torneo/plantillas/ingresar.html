@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="{{STATIC_URL}}css/styleslogin.css" />
+	<title>.::TORNEO SSEE::.</title>
+</head>
+<body>
+	<section id="login">
+		<form id='formulario' method='post' action=''>{% csrf_token %}
+			<table>
+				<tr>
+					<th colspan="2">LOGIN TORNEO SSEE</th>
+				</tr>
+				<tr>
+					<td>User:</td>
+					<td>{{ formulario.username }} </td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td>{{ formulario.password }} </td>
+				</tr>
+				<tr>
+					<td><a class="boton" href="/">Volver</a></td>
+					<td><input class="boton" type='submit' value='Login' /></td>
+				</tr>
+			</table>
+		</form>
+	</section>
+	<section>
+		{% block contenido %}{% endblock %}
+	</section>
+</body>
+</html>

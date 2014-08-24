@@ -1,0 +1,45 @@
+body
+{
+/*	background: #333;*/
+	color: #FFF;
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	font-size: 16px;
+	text-align: center;
+}
+section
+{
+	border-radius: 10px;
+	margin: 0 auto;
+	width: 800px;
+}
+.planilla
+{
+	cellspacing: 4px;
+    border: 2px solid #CCC;
+    border-spacing: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+.planilla td
+{
+    border: 1px solid #CCC;
+    text-align: left;
+}
+.planilla th
+{
+    border: 1px solid #CCC;
+    text-align: center;
+}
+
+#contenido
+{
+	background: #FFF;
+	border-radius: 5px;
+	color: #000;
+	text-align: left;
+	width:95%;
+}
+#separador
+{
+	height:20px;
+}

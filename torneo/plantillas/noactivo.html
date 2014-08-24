@@ -1,0 +1,10 @@
+{% extends 'ingresar.html'%}
+{% block contenido %}
+	{% if error %}
+		<div style="color:red"> El usuario no esta activo </div>
+	{% endif %}
+	<!--<script>
+		alert('El usuario esta bloqueado, contactese con el administrador, para resolver el problema');
+		document.location.href='/ingresar';
+	</script>-->
+{% endblock %}

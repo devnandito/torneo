@@ -1,0 +1,17 @@
+{% if page_obj.has_previous %}
+  Previous
+{% endif %}
+{% for page in page_numbers %}
+  {% if page %}
+    {% ifequal page page_obj.number %}
+      {{ page }}
+    {% else %}
+      {{ page }}
+    {% endifequal %}
+  {% else %}
+    ...
+  {% endif %}
+{% endfor %}
+{% if page_obj.has_next %}
+  Next
+{% endif %}

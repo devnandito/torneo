@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load paginator %}
+{% block breadcrumbs %}<a href="/"><input type="text" name="desjugador" />Home</a> > Search Jugador{% endblock %}
+{% block centercolumn %}
+{% if object_list %}
+<table width="100%">
+    <tr>
+        <td class="paginator">
+            {% if is_paginated %}<div class="paginator">{% paginator %}</div>{% endif %}
+        </td>
+    </tr>
+    {% for jugador in object_list %}
+    <tr class="{% cycle bodytext,bodyshaded %}">
+        <td>
+            <a href="/listjugador{{jugador.id}}">{{ jugador.desjugador }}</a>
+        </td>
+    </tr>
+    {% endfor %}
+{% else %}
+    <tr>
+        <td>
+            No businesses are available.
+        </td>
+    </tr>
+{% endif %}
+</table>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load principal_extras %}
+{% block title %}
+	{% for title in torneos %}
+		<h1>{{ title.nametorneo|upper }}</h1>
+		<h2>{{ title.destorneo|upper }}</h2>
+	{% endfor %}
+{% endblock %}
+{% block contenido %}
+	<table>
+		<tr>
+			<th>EQUIPOS</th>
+			<th>PJ</th>
+			<th>PG</th>
+			<th>PE</th>
+			<th>PP</th>
+			<th>GF</th>
+			<th>GC</th>
+			<th>PUNTOS</th>
+			<th>DG</th>
+		</tr>
+		{% for item in equipos %}
+		<tr style="background:{% cycle '#DCDCF0' '#FFFFF0' %} ">
+			<td>{{ item.desequipo }}</td>
+			<td>{{ item.pj }}</td>
+			<td>{{ item.pg }}</td>
+			<td>{{ item.pe }}</td>
+			<td>{{ item.pp }}</td>
+			<td>{{ item.gf }}</td>
+			<td>{{ item.gc }}</td>
+			<td>{{ item.puntos }}</td>
+			<td>{{ item.gf|sub:item.gc }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

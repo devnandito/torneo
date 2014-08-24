@@ -1,0 +1,174 @@
+body
+{
+/*	background: #333;*/
+    background: url('../img/background.jpg');
+	color: #FFF;
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	font-size: 16px;
+	text-align: center;
+}
+header
+{
+	/*background: url('../img/fondo.png');*/
+	margin: 0 0 10px 0;
+	padding: 0.5em 0;
+	width:100%;
+	height: 200px;
+	
+}
+img
+{
+	width: 1em;
+}
+nav
+{
+	background: rgba(210,93,18,0.2);
+	border-radius: 10px;
+	box-shadow: rgba(0,0,0,0.5) 0 -5px 10px;
+	height: 45px;
+	margin: 0.5em 0;
+	padding: 1em 0;
+	width: 100%;
+}
+nav ul
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+nav ul li 
+{
+	display: inline-block;
+}
+nav ul li a
+{
+	background: #D23D15;
+	border-radius: 0.5em;
+	color: white;	
+	display: inline-block;
+	margin: 0 1em 0 0;
+	padding: 0.5em 1em;
+	text-decoration: none;
+}
+nav ul li a:hover
+{
+	background: #FFF;
+	color: black;
+}
+section
+{
+/*	background: #111;*/
+	border-radius: 10px;
+	margin: 0 auto;
+	padding: 0.3em 0;
+	width: 960px;
+}
+table
+{
+	margin: 0 auto;
+	width: 80%;
+}
+table td
+{
+	text-align: center;
+	width: 20%;
+}
+table th
+{
+	text-align: center;
+}
+.boton
+{
+	background: #D23D15;
+	border: none;
+	border-radius: 0.5em;
+	color: white;
+	cursor:pointer;
+	font-size:15px;
+	height:2.3em;
+	margin: 0.5em 0.5em 0.5em 0.5em;
+	padding: 0.5em 1em;
+	text-decoration:none;
+}
+.boton:hover
+{
+	background: #A23A10;
+	color: black;
+}
+.error
+{
+	color:red;
+	font-size: 0.7em;
+}
+.foot
+{
+	text-align: center;
+	width:80%;
+}
+.planilla
+{
+    border: 2px solid #CCC;
+    border-spacing: 0;
+    width: 100%;
+}
+.planilla td
+{
+    border: 1px solid #CCC;
+    text-align: left;
+    width: 25%;
+}
+.planilla th
+{
+    border: 1px solid #CCC;
+}
+.table1
+{
+	border: 1px solid #D23D15;
+	border-radius: 1em;
+	margin: 0.5em 0.5em;
+	padding: 0.5em 0.5em;
+	width: 80%;
+}
+.table1 input[type="text"],input[type="password"], select
+{
+	width: 98%;
+}
+.table1 input[type="submit"]
+{
+	float:right;
+}
+.table1 td
+{
+	text-align: center;
+	width: 20%;
+}
+.table1 th
+{
+	text-align: center;
+}
+#contenido
+{
+	background: #FFF;
+	border-radius: 5px;
+	color: #000;
+	text-align: left;
+	width:55%;
+}
+#contenido, #info
+{
+	display: inline-block;
+	vertical-align: top;
+}
+#foto
+{
+	border-radius: 1em;
+	width: 100%;	
+}
+#info
+{
+/*	background: #444;*/
+	border-radius: 5px;
+	padding: 0.1em 0.1em;
+	text-align: left;
+	width: 43%;
+}
